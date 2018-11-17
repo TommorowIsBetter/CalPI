@@ -56,6 +56,7 @@ public class CalPI {
 			}
 	public static void main(String[] args) throws Exception { 
 		Configuration conf = new Configuration(); 
+		conf.set("dfs.client.use.datanode.hostname", "true");
 		Job job = Job.getInstance(conf,"calculate pi"); 
 		job.setJarByClass(CalPI.class); 
 		job.setMapperClass(PiMapper.class); 
